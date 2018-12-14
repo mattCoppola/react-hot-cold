@@ -2,13 +2,17 @@ import React from 'react';
 
 import './top-nav.css';
 
+// pass props from STATELESS parent to STATELESS child
+// this will attach event listeners to the anchor elements
+// methods restartGame and generalAuralUpdate
+// onClick will trigger the callback function, communicating back to the Parent component
 export default function TopNav(props) {
   return (
     <nav>
       <ul className="clearfix">
         <li>
-          <a 
-            href="#what" 
+          <a
+            href="#what"
             className="what"
             aria-label="How to play"
           >
@@ -28,7 +32,7 @@ export default function TopNav(props) {
         <li>
           <a
             href="#get-status"
-            /* the `visuallyhidden` class hides an element 
+            /* the `visuallyhidden` class hides an element
             while leaving it available to screen reader users  */
             className="visuallyhidden focusable status-link"
             onClick={() => props.onGenerateAuralUpdate()}

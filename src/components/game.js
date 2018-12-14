@@ -1,10 +1,12 @@
 import React from 'react';
 
+// import components - these components are STATELESS children to the STATEFUL PARENT Game component
 import Header from './header';
 import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
 
+// export Game component.  This is a STATEFUL component
 export default class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +18,8 @@ export default class Game extends React.Component {
     };
   }
 
+// restartGame method will reset the Game to default settings (default state)
+// this method is passed to the Header component during render
   restartGame() {
     this.setState({
       guesses: [],
@@ -25,6 +29,10 @@ export default class Game extends React.Component {
     });
   }
 
+// makeGuess method handles user's guesses, determining the hot/cold status
+// it changes the state of the component by updating feedback
+// it changes the state of the component by updating guesses array
+// this method is passed to the GuessSection component during render
   makeGuess(guess) {
     guess = parseInt(guess, 10);
     if (isNaN(guess)) {
@@ -59,6 +67,10 @@ export default class Game extends React.Component {
     document.title = feedback ? `${feedback} | Hot or Cold` : 'Hot or Cold';
   }
 
+
+// this method provides an aural update to screen readers
+// it changes the state of state.auralStatus
+// this method is passed to Header section during render
   generateAuralUpdate() {
     const { guesses, feedback } = this.state;
 
@@ -76,6 +88,8 @@ export default class Game extends React.Component {
     this.setState({ auralStatus });
   }
 
+// render the 'brain' - call child components
+// pass STATE variables as props and methods as callbacks
   render() {
     const { feedback, guesses, auralStatus } = this.state;
     const guessCount = guesses.length;
@@ -92,7 +106,7 @@ export default class Game extends React.Component {
             guessCount={guessCount}
             onMakeGuess={guess => this.makeGuess(guess)}
           />
-          <StatusSection guesses={guesses} 
+          <StatusSection guesses={guesses}
             auralStatus={auralStatus}
           />
           <InfoSection />

@@ -2,6 +2,9 @@ import React from 'react';
 
 import './info-section.css';
 
+// STATELESS component
+// props passed?  I don't see any
+// this section will show when the What? anchor tag is clicked in the TopNav
 export default function InfoSection(props) {
   return (
     <section id="what" tabIndex="-1">

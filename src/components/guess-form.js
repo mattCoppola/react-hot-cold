@@ -1,7 +1,8 @@
 import React from 'react';
 
 import './guess-form.css';
-// this is a stateful component with a stateless parent sending data upstream
+
+// this is a STATEFUL component with a STATELESS parent sending data upstream
 export default class GuessForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
