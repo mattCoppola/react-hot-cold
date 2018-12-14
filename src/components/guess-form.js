@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './guess-form.css';
-
+// this is a stateful component with a stateless parent sending data upstream
 export default class GuessForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
@@ -29,10 +29,10 @@ export default class GuessForm extends React.Component {
           ref={input => (this.input = input)}
           required
         />
-        <button 
+        <button
           type="submit"
           name="submit"
-          id="guessButton" 
+          id="guessButton"
           className="button"
         >
           Guess
