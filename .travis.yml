@@ -1,7 +1,14 @@
 language: node_js
 node_js: node
-cache:
+cache: 
 directories:
 - node_modules
 env:
 - CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: VWdmVSY0q0RqEVIrYVXvu/msgoeajt29Tftkw4FKXJ36DHFyBRA3wMPA6LokHTFjuiJAoldoOcdsKngDJIiaM6EdQpTnCM/g66DNiWYGyrIKtRbHA4soGwrurrv5IaDxRZVaeK9uNL6fJasf606ImRm6iW47e3V6SR8WEBt1YU7wVqzN3DHWu7LhMRgp94Qr0eRFk685VBXEVt4Dk6g9VTw5p3x2EJ2iJcYRjqLxgv6QD0+Fr7g/fT6hDIRSMRS255cfdYtJZBk1odIPUtRWmCK6qBRdo7xOZyRoXpr7t+w/LM/NlMlJ7PbH+uT6z2rUa3ZHyD97F5OG21IYIjnimB71z+m+RD+S9IZsDRo1DQni3qzJLXYfwkqnyPIAB6NgqvYc7TUwOnva8+xaG+vnGINceu0ndH6XJY1+oaN1W5W/P3Ywz1WKzoRYri0qA3PZ976zAFqjsBQi5Ay0iihqmuCp5tbH9QrEElEnQKt4iCaqEX/k1U75HpV0RS6F5KdqgOEiIz38UC46XZxxl1FJALWrqf0jgp2iwPp6ZvBD6gUi3uQrJebh31JdywH8Pv7JePqUuF7OGRbimN15kl93mQJ3XpsGnZNMiSdqRBM2NDDx6ZKEgGz+BVpnNjdFyNwp2Vn29N5ZJ/vhA7c+QEPvRGDIR3h+xrMM70AVkiOpdVg=
+  app: aqueous-tundra-65722
+  on:
+    repo: mattCoppola/react-hot-cold
